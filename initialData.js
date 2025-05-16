@@ -40,3 +40,23 @@ const initialTasks = [
     status: "done",
   },
 ];
+
+/**
+ * Renders an array of task objects to their respective columns in the DOM.
+ */ 
+ 
+function renderTasks(tasks) {
+  //Clear existing tasks from the columns.
+  const todoColumn = document.getElementById("todo-column");
+  const doingColumn = document.getElementById("doing-column");
+  const doneColumn = document.getElementById("done-column");
+
+  todoColumn.innerHTML="";
+  doingColumn.innerHTML="";
+  doneColumn.innerHTML="";
+
+     tasks.forEach(task => {
+       const taskElement = createTaskElement(task)//Create the task element.
+       const columnElement = document.getElementById(`${task.status}-column`)//To get the correct column
+  });
+}
