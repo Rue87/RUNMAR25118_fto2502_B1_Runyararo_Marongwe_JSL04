@@ -1,0 +1,262 @@
+/* ========================
+   Global & Root Variables
+======================== */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #f4f7fd;
+  --primary-font-color: #000000;
+  --secondary-font-color: #828fa3;
+  --highlight-color: #635fc7; /* For active states/buttons */
+  --todo-color: #49c4e5;
+  --doing-color: #8471f2;
+  --done-color: #219c90;
+  --primary-box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.1015);
+  --modal-overlay-color: rgba(0, 0, 0, 0.5);
+  --column-gap: 20px;
+  --task-padding: 16px;
+  --modal-width: 400px;
+  --modal-padding: 20px;
+}
+
+/* ================
+   Base Elements
+================ */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--primary-font-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===============
+   Header Section
+================ */
+header {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 20px 30px;
+  box-shadow: var(--primary-box-shadow);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+header h1 {
+  margin: 0;
+  color: var(--primary-font-color);
+}
+
+/* ===============
+   Board Columns
+================ */
+#task-board {
+  display: flex;
+  gap: var(--column-gap);
+  width: 90%;
+  max-width: 1440px;
+  margin: 20px auto;
+  overflow-x: auto;
+}
+
+.column {
+  flex: 1;
+  min-width: 280px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--primary-box-shadow);
+}
+
+.column h2 {
+  font-size: 1.25rem;
+  color: var(--secondary-font-color);
+  margin-bottom: 12px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Task Card */
+.task {
+  background-color: var(--primary-color);
+  color: var(--primary-font-color);
+  border-radius: 8px;
+  padding: var(--task-padding);
+  box-shadow: var(--primary-box-shadow);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.task p {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
+  color: var(--secondary-font-color);
+}
+
+/* ===============
+   Modal
+================ */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--modal-width);
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: var(--primary-box-shadow);
+  padding: var(--modal-padding);
+  display: none; /* Hidden by default */
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--primary-font-color);
+}
+
+.modal label {
+  font-size: 0.875rem;
+  color: var(--secondary-font-color);
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--secondary-font-color);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: var(--secondary-font-color);
+  cursor: pointer;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-overlay-color);
+  z-index: 999;
+  display: none; /* Hidden by default */
+}
+
+.modal-backdrop.active {
+  display: block;
+}
+
+/* ===============
+   Status Dots
+================ */
+#todo-column-container h2::before {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: var(--todo-color);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+#doing-column-container h2::before {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: var(--doing-color);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+#done-column-container h2::before {
+  content: "";
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  background-color: var(--done-color);
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* ===============
+   Responsive Styles
+================ */
+
+/******** Tablets ********/
+@media screen and (max-width: 1023px) {
+  #task-board {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .column {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .modal {
+    width: 80%;
+  }
+}
+
+/******** Mobile ********/
+@media screen and (max-width: 576px) {
+  #task-board {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}

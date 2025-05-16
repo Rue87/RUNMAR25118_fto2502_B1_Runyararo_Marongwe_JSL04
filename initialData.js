@@ -58,5 +58,33 @@ function renderTasks(tasks) {
   tasks.forEach((task) => {
     const taskElement = createTaskElement(task); //Create the task element.
     const columnElement = document.getElementById(`${task.status}-column`); //To get the correct column
+
+     if (columnElement) {
+      columnElement.appendChild(taskElement);
+    } else {
+      console.warn(`No column found for status: ${task.status}`);
+    }
   });
 }
+/**
+ * Creates a DOM element representing a single task.
+ */
+
+function createTaskElement(task) {
+  const taskDiv = document.createElement("div");
+  taskDiv.classList.add("task");
+  taskDiv.setAttribute("data-id", task.id);
+  
+  const titleElement = document.createElement ("h3")
+  titleElement.textContent = task.title;
+
+  const descriptionElement = document.createElement ("p");
+  descriptionElement.textContent = task.description;
+
+  taskDiv.appendChild(titleElement);
+   taskDiv.appendChild(descriptionElement);
+
+   return taskDiv;
+}
+
+   renderTasks(initialTasks);
