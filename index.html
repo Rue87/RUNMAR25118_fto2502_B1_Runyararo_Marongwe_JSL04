@@ -1,18 +1,53 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <script src="initialData.js" defer></script>
-        
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div id="todo-column"></div>
-        <div id="doing-column"></div>
-        <div id="done-column"></div>
-        
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dynamic Task Board</title>
+    <script src="initialData.js" defer></script>
+
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="task-board">
+      <div class="column" id="todo-column-container">
+        <h2>To Do</h2>
+        <div id="todo-column" class="task-list"></div>
+      </div>
+      <div class="column" id="doing-column-container">
+        <h2>In Progress</h2>
+        <div id="doing-column" class="task-list"></div>
+      </div>
+      <div class="column" id="done-column-container">
+        <h2>Done</h2>
+        <div id="done-column" class="task-list"></div>
+      </div>
+    </div>
+    <div id="task-modal" class="modal">
+      <div class="modal content">
+        <span class="close-button">&times;</span>
+        <h3>Task</h3>
+        <div>
+          <label for="modal-title"> Title</label>
+        </div>
+        <input type="text" id="modal-title" />
+        <div>
+          <label for="modal-description">Description</label>
+        </div>
+        <textarea id="modal-description"></textarea>
+        <div>
+         <label for="modal-status">Status</label>
+         </div>
+            <select id="modal-status">
+                <option value="todo">todo</option>
+                <option value="doing">doing</option>
+                <option value="done">done</option>
+            </select>  
+        </div>
+        <div class="modal-backdrop"></div>
+    </div>
+      </div>
+    </div>
+  </body>
 </html>
