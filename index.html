@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <link rel="stylesheet" href="style.css?v=1">
   </head>
+
   <body>
      <nav class="side-bar" id="side-bar-div">
       <div id="side-logo-div">
@@ -25,39 +26,41 @@
     <div id="layout">
       <header id="header" class="sticky-header">
         <div class="header-name-div">
-          <h2 class="header-board-name" id="header-board-name">
+          <h3 class="header-board-name" id="header-board-name">
             Launch Career
-          </h2>
+            </h3>
+        <img src="/assets/logo-light.svg" alt="logo-light" class="header-logo-light">
         </div>
       </header>
     <div id="task-board">
       <div class="column" id="todo-column-container">
-        <h2>To Do</h2>
+        <h4>TODO (2)</h4>
         <div id="todo-column" class="task-list"></div>
       </div>
       <div class="column" id="doing-column-container">
-        <h2>In Progress</h2>
+        <h4>DOING (2)</h4>
         <div id="doing-column" class="task-list"></div>
       </div>
       <div class="column" id="done-column-container">
-        <h2>Done</h2>
+        <h4>DONE (2)</h4>
         <div id="done-column" class="task-list"></div>
       </div>
     </div>
+    
     <div id="task-modal" class="modal">
       <div class="modal-content">
         <span class="close-button">&times;</span>
         <h3>Task</h3>
         <div>
-          <label for="modal-title"> Title</label>
+          <label for="modal-title" class="modal-label"> Title</label>
         </div>
         <input type="text" id="modal-title" />
         <div>
-          <label for="modal-description">Description</label>
+          <label for="modal-description" class="modal-label">Description</label>
         </div>
         <textarea id="modal-description"></textarea>
         <div>
-         <label for="modal-status">Status</label>
+         <label for="modal-status" class="modal-label">Status</label>
          </div>
             <select id="modal-status">
                 <option value="todo">todo</option>
@@ -65,7 +68,8 @@
                 <option value="done">done</option>
             </select>  
         </div>
-        <div class="modal-backdrop"></div>
+        
     </div>
+    <div class="modal-backdrop"></div>
   </body>
 </html>

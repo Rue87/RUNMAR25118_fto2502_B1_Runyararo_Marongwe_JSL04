@@ -84,7 +84,30 @@ function createTaskElement(task) {
   taskDiv.appendChild(titleElement);
  //taskDiv.appendChild(descriptionElement);
 
+ taskDiv.addEventListener("click", () => openTaskModal(task));
+
+
    return taskDiv;
 }
 
    renderTasks(initialTasks);
+
+  function openTaskModal(task) {
+  const modal = document.getElementById("task-modal");
+  const backdrop = document.querySelector(".modal-backdrop");
+
+  document.getElementById("modal-title").value = task.title;
+  document.getElementById("modal-description").value = task.description;
+  document.getElementById("modal-status").value = task.status;
+
+  modal.classList.add("active");
+  backdrop.classList.add("active");
+}
+// Close Modal Events and Function
+document.querySelector(".close-button").addEventListener("click", closeModal);
+document.querySelector(".modal-backdrop").addEventListener("click", closeModal);
+
+function closeModal() {
+  document.getElementById("task-modal").classList.remove("active");
+  document.querySelector(".modal-backdrop").classList.remove("active");
+}

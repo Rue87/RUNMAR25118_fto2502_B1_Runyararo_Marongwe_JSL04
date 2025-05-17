@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 /* ========================
    Global & Root Variables
 ======================== */
@@ -10,6 +11,7 @@
   --secondary-color: #f4f7fd;
   --primary-font-color: #000000;
   --secondary-font-color: #828fa3;
+  --tertiary-font-color: #ea5555;
   --highlight-color: #635fc7; /* For active states/buttons */
   --todo-color: #49c4e5;
   --doing-color: #8471f2;
@@ -18,9 +20,10 @@
   --modal-overlay-color: rgba(0, 0, 0, 0.5);
   --column-gap: 20px;
   --task-padding: 16px;
-  --modal-width: 400px;
-  --modal-padding: 20px;
-  --sidebar-width: 350px;
+  --modal-width: 600px;
+  --modal-height: 415px;
+  --modal-padding: 24px;
+  --sidebar-width: 300px;
 }
 
 /* ================
@@ -98,11 +101,9 @@ h4 {
 ================ */
 #layout {
   flex: 1; /* Fills remaining space beside sidebar */
-  display: flex;
   flex-direction: column;
-  width: auto;
+  width: 100%;
   overflow-x: hidden; /* Prevent horizontal scroll */
-
 }
 
 /* ===============
@@ -116,11 +117,25 @@ header {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
+  justify-content: center;
 }
 
-header h1 {
+header h3 {
   margin: 0;
   color: var(--primary-font-color);
+  font-size: 24px;
+}
+.header-board-name {
+  position: relative;
+  display: inline-bl
+}
+.header-board-name h3 {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.header-logo-light {
+  display: none;
 }
 
 /* ===============
@@ -138,11 +153,10 @@ header h1 {
 .column {
   flex: 1;
   min-width: 280px;
-  background-color: var(--primary-color);
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: var(--primary-box-shadow);
-}
+  background-color: #f4f7fd ;
+  margin-left: 0;
+  align-items: left;
+  }
 
 .column h2 {
   font-size: 1.25rem;
@@ -160,11 +174,13 @@ header h1 {
 .task {
   background-color: var(--primary-color);
   color: var(--primary-font-color);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: var(--task-padding);
   box-shadow: var(--primary-box-shadow);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 280px;
+  height: 60px;
 }
 
 .task:hover {
@@ -174,13 +190,15 @@ header h1 {
 
 .task h3 {
   margin: 0;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 100%;
 }
 
 .task p {
   margin: 4px 0 0;
-  font-size: 0.875rem;
+  font-size: 13px;
+  font-weight: 500;
   color: var(--secondary-font-color);
 }
 
@@ -193,10 +211,13 @@ header h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   width: var(--modal-width);
+  height: var(--modal-height);
   background-color: var(--primary-color);
   border-radius: 8px;
   box-shadow: var(--primary-box-shadow);
   padding: var(--modal-padding);
+  z-index: 1100;
+
   display: none; /* Hidden by default */
 }
 
@@ -211,36 +232,84 @@ header h1 {
 }
 
 .modal h3 {
-  margin: 0;
+  margin: 0px;
   font-size: 1.25rem;
-  color: var(--primary-font-color);
+  color: var(--primary-font-color);;
+  
 }
 
-.modal label {
-  font-size: 0.875rem;
+.modal-label {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-top: 20px;
+  margin-left: 0px;
   color: var(--secondary-font-color);
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.modal input,
-.modal textarea,
-.modal select {
+#modal-title {
+  width: 551px;
+  height: 40px;
+  margin-top: 1px;
+  border: var(--secondary-font-color);
+  
+}
+
+#modal-description {
+  width: 551px;
+  height: 113px;
+  top: 8px;
+  border: var(--secondary-font-color);
+}
+
+#modal-status {
+  width: 551px;
+  height: 40px;
+  top: 8px;
+  border: var(--secondary-font-color);
+  padding-left: 8px;
+  border-radius: 4px;
+  margin-bottom: 29px;
+}
+.modal-select {
   width: 100%;
-  padding: 8px;
+  padding-left: 8px;
   border: 1px solid var(--secondary-font-color);
   border-radius: 4px;
   font-size: 1rem;
+  margin-bottom: 29px;
 }
-
+#task-modal input,
+#task-modal textarea,
+#task-modal select {
+  font-size: 13px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  border: 1px solid var(--secondary-font-color);
+  border-radius: 4px;
+  padding: left 8px;
+}
 textarea {
   resize: none;
+  padding-top: 7px;
+  padding-left: 8px;
+}
+input {
+  padding-left: 8px;
+}
+status {
+  padding-left: 8px;
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  align-items: right;
+  top: 19px;
+  margin-right: 24px;
   font-size: 1.5rem;
-  color: var(--secondary-font-color);
+  color: var(--tertiary-font-color);
+  width: 3px;
+  height: 18px;
   cursor: pointer;
 }
 
@@ -252,18 +321,19 @@ textarea {
   width: 100%;
   height: 100%;
   background-color: var(--modal-overlay-color);
-  z-index: 999;
   display: none; /* Hidden by default */
+  z-index: 1000;
 }
 
 .modal-backdrop.active {
   display: block;
 }
 
+
 /* ===============
    Status Dots
 ================ */
-#todo-column-container h2::before {
+#todo-column-container h4::before {
   content: "";
   display: inline-block;
   height: 12px;
@@ -273,7 +343,7 @@ textarea {
   margin-right: 8px;
 }
 
-#doing-column-container h2::before {
+#doing-column-container h4::before {
   content: "";
   display: inline-block;
   height: 12px;
@@ -283,7 +353,7 @@ textarea {
   margin-right: 8px;
 }
 
-#done-column-container h2::before {
+#done-column-container h4::before {
   content: "";
   display: inline-block;
   height: 12px;
@@ -292,29 +362,114 @@ textarea {
   border-radius: 50%;
   margin-right: 8px;
 }
+#task-modal,
+#task-modal * {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
 
 /* ===============
    Responsive Styles
 ================ */
 
 /******** Tablets ********/
-@media screen and (max-width: 1023px) {
-  #task-board {
-    flex-wrap: wrap;
+  @media screen and (max-width: 1023px) {
+  .side-bar {
+    display: none; /* Hide sidebar on tablets and smaller */
+  }
+   #task-board {
+    flex-direction: column;
     gap: 16px;
   }
-
-  .column {
-    flex: 1 1 calc(50% - 20px);
+  .side-bar.show-sidebar {
+    display: flex !important;
+    position: fixed; /* Overlay on top of page */
+    height: auto;
+  }
+    #side-logo-div {
+    display: none;
   }
 
-  .modal {
-    width: 80%;
+  .logo-mobile {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
   }
+   body {
+    font-size: 0.8rem;
+  }
+
+  .board-btn {
+    font-size: 0.8rem;
+    padding-left: 15px;
+    margin-right: 15px;
+    font-weight: 700;
+  }
+
+  .container {
+    padding: 0;
+    width: 100%;
+    align-items: center; /* Center columns on smaller screens */
+  }
+
+  .card-column-main {
+    grid-template-columns: repeat(2, minmax(0, 360px));
+    gap: 8px;
+  }
+
+  header {
+    height: 64px;
+    padding: 0 10px 0 18px;
+    border: none;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .task {
+    width: 100%;
+  }
+
+  .columnHeader {
+    font-size: 0.75rem;
+  }
+
+  .dot {
+    height: 8px;
+    width: 8px;
+  }
+
+  .column-head-div {
+    gap: 8px;
+  }
+
+  .column-div {
+    width: 100%;
+  }
+  .modal
 }
+
 
 /******** Mobile ********/
 @media screen and (max-width: 576px) {
+
+  .header-logo-light {
+    display: block;
+    position: absolute;
+    top: 38px;
+    width: 112px; /* or whatever size fits */
+    height: 24px;
+    z-index: 2;
+    pointer-events: none;
+    margin-left: 5px;
+  }
+
+  .header-board-name {
+    display: none;
+  } /* make space for icon */
+  
+  .side-bar {
+    display: none;
+  }
+
   #task-board {
     flex-direction: column;
     gap: 16px;
