@@ -82,7 +82,7 @@ function createTaskElement(task) {
   descriptionElement.textContent = task.description;
 
   taskDiv.appendChild(titleElement);
-   taskDiv.appendChild(descriptionElement);
+ //taskDiv.appendChild(descriptionElement);
 
    return taskDiv;
 }
