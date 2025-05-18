@@ -12,12 +12,16 @@
   </head>
 
   <body>
+    <!-- Sidebar navigation-->
      <nav class="side-bar" id="side-bar-div">
       <div id="side-logo-div">
         <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
       </div>
 
       <div class="boards-nav-links-div" id="boards-nav-links-div">
+        
+        <!-- Sidebar heading and board button -->
+
         <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
         <button class="board-btn">Launch Career</button>
       </div>
@@ -32,7 +36,9 @@
         <img src="/assets/logo-light.svg" alt="logo-light" class="header-logo-light">
         </div>
       </header>
-    <div id="task-board">
+
+<!--Task board with columns-->
+ <div id="task-board">
       <div class="column" id="todo-column-container">
         <h4>TODO (2)</h4>
         <div id="todo-column" class="task-list"></div>
@@ -46,7 +52,7 @@
         <div id="done-column" class="task-list"></div>
       </div>
     </div>
-    
+    <!-- Modal for viewing/editing a task -->
     <div id="task-modal" class="modal">
       <div class="modal-content">
         <span class="close-button">&times;</span>
@@ -59,6 +65,7 @@
           <label for="modal-description" class="modal-label">Description</label>
         </div>
         <textarea id="modal-description"></textarea>
+        <!-- Dropdown: Task Status -->
         <div>
          <label for="modal-status" class="modal-label">Status</label>
          </div>
@@ -71,6 +78,7 @@
         </div>
       
         </div>
+         <!-- Modal background overlay -->
     <div class="modal-backdrop"></div>
   </body>
 </html>

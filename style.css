@@ -1,3 +1,6 @@
+/* ========================
+   Google Fonts Import
+======================== */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
 /* ========================
    Global & Root Variables
@@ -171,7 +174,9 @@ header h3 {
   gap: 12px;
 }
 
-/* Task Card */
+/* ========================
+   Task Card Styles
+======================== */
 .task {
   background-color: var(--primary-color);
   color: var(--primary-font-color);
@@ -204,7 +209,7 @@ header h3 {
 }
 
 /* ===============
-   Modal
+   Modal Styles
 ================ */
 .modal {
   position: fixed;
@@ -243,7 +248,6 @@ header h3 {
 }
 .close-button {
   position: absolute;
-  align-items: right;
   top: 19px;
   margin-right: 24px;
   font-size: 1.5rem;
@@ -326,7 +330,10 @@ input {
 }
 
 
-/* Modal Backdrop */
+/* ========================
+    Modal Backdrop 
+========================*/
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -344,7 +351,7 @@ input {
 
 
 /* ===============
-   Status Dots
+   Column Title Dots
 ================ */
 #todo-column-container h4::before {
   content: "";
@@ -495,5 +502,5 @@ input {
   .drop-down {
     width: 70%;
   }
-  
+}
 }

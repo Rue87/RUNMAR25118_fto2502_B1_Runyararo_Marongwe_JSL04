@@ -42,7 +42,9 @@ const initialTasks = [
 ];
 
 /**
- * Renders an array of task objects to their respective columns in the DOM.
+ * Renders an array of task objects to their respective columns ("todo", "doing", "done").
+ * 
+ * @param {Array} tasks - Array of task objects with id, title, description, and status.
  */
 
 function renderTasks(tasks) {
@@ -68,6 +70,9 @@ function renderTasks(tasks) {
 }
 /**
  * Creates a DOM element representing a single task.
+ * 
+ * @param {Object} task - The task object containing id, title, description, and status.
+ * @returns {HTMLElement} - The created task element.
  */
 
 function createTaskElement(task) {
@@ -91,22 +96,45 @@ function createTaskElement(task) {
 
 renderTasks(initialTasks);
 
+/**
+ * Opens the task modal with the given task's details filled in.
+ * This function first fills the modal fields with the task information, then displays the modal along with the backdrop.
+ * @param {Object} task - The task object containing id, title, description, and status. 
+ */
 function openTaskModal(task) {
-  const modal = document.getElementById("task-modal");
-  const backdrop = document.querySelector(".modal-backdrop");
+  fillModalFields(task);
+  showModal();
+}
 
+/**
+ * Fills the modal input fields with the provided task's details.
+ * @param {Object} task - Task with title, description, and status to fill the modal. 
+ */
+
+  function fillModalFields(task) {
   document.getElementById("modal-title").value = task.title;
   document.getElementById("modal-description").value = task.description;
   document.getElementById("modal-status").value = task.status;
+  }
 
-  modal.classList.add("active");
-  backdrop.classList.add("active");
+  /**
+   * Displays the modal and the backdrop.
+   * This function adds the "active" class to the modal and backdrop, making them visible.
+   */
+  function showModal() {
+  document.getElementById("task-modal").classList.add("active");
+  document.querySelector(".modal-backdrop").classList.add("active");
 }
-// Close Modal Events and Function
-document.querySelector(".close-button").addEventListener("click", closeModal);
-document.querySelector(".modal-backdrop").addEventListener("click", closeModal);
+
+/**
+ * closes the task modal and the backdrop.
+ * This function removes the "active" class from the modal and backdrop, making them invisible.
+ */
 
 function closeModal() {
   document.getElementById("task-modal").classList.remove("active");
   document.querySelector(".modal-backdrop").classList.remove("active");
 }
+// Close Modal Events and Function:add event listeners for closing the modal when clicking the close button or backdrop.
+document.querySelector(".close-button").addEventListener("click", closeModal);
+document.querySelector(".modal-backdrop").addEventListener("click", closeModal);
