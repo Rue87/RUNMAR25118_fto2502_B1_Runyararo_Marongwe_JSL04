@@ -127,7 +127,8 @@ header h3 {
 }
 .header-board-name {
   position: relative;
-  display: inline-bl
+  display: inline-block;
+  margin-top: 0px;
 }
 .header-board-name h3 {
   font-size: 1.5rem;
@@ -217,6 +218,8 @@ header h3 {
   box-shadow: var(--primary-box-shadow);
   padding: var(--modal-padding);
   z-index: 1100;
+  padding-bottom: 40px;
+  overflow-y: auto;
 
   display: none; /* Hidden by default */
 }
@@ -229,6 +232,7 @@ header h3 {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  position: relative;
 }
 
 .modal h3 {
@@ -236,6 +240,17 @@ header h3 {
   font-size: 1.25rem;
   color: var(--primary-font-color);;
   
+}
+.close-button {
+  position: absolute;
+  align-items: right;
+  top: 19px;
+  margin-right: 24px;
+  font-size: 1.5rem;
+  color: var(--tertiary-font-color);
+  width: 3px;
+  height: 18px;
+  cursor: pointer;
 }
 
 .modal-label {
@@ -249,28 +264,35 @@ header h3 {
 }
 
 #modal-title {
-  width: 551px;
+  width: 100%;
+  max-width: 100%;
   height: 40px;
   margin-top: 1px;
   border: var(--secondary-font-color);
+  box-sizing: border-box;
   
 }
 
 #modal-description {
-  width: 551px;
+  width: 100%;
+  max-width: 100%;
   height: 113px;
   top: 8px;
   border: var(--secondary-font-color);
+  box-sizing: border-box;
 }
 
 #modal-status {
-  width: 551px;
+  width: 100%;
+  max-width: 100%;
   height: 40px;
   top: 8px;
   border: var(--secondary-font-color);
   padding-left: 8px;
   border-radius: 4px;
   margin-bottom: 29px;
+  box-sizing: border-box;
+
 }
 .modal-select {
   width: 100%;
@@ -297,21 +319,12 @@ textarea {
 input {
   padding-left: 8px;
 }
-status {
-  padding-left: 8px;
+
+.drop-down {
+  width: 100%;
+  
 }
 
-.close-button {
-  position: absolute;
-  align-items: right;
-  top: 19px;
-  margin-right: 24px;
-  font-size: 1.5rem;
-  color: var(--tertiary-font-color);
-  width: 3px;
-  height: 18px;
-  cursor: pointer;
-}
 
 /* Modal Backdrop */
 .modal-backdrop {
@@ -444,10 +457,7 @@ status {
   .column-div {
     width: 100%;
   }
-  .modal
-}
-
-
+ 
 /******** Mobile ********/
 @media screen and (max-width: 576px) {
 
@@ -482,4 +492,8 @@ status {
   .modal {
     width: 90%;
   }
+  .drop-down {
+    width: 70%;
+  }
+  
 }

@@ -59,7 +59,7 @@ function renderTasks(tasks) {
     const taskElement = createTaskElement(task); //Create the task element.
     const columnElement = document.getElementById(`${task.status}-column`); //To get the correct column
 
-     if (columnElement) {
+    if (columnElement) {
       columnElement.appendChild(taskElement);
     } else {
       console.warn(`No column found for status: ${task.status}`);
@@ -74,25 +74,24 @@ function createTaskElement(task) {
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task");
   taskDiv.setAttribute("data-id", task.id);
-  
-  const titleElement = document.createElement ("h3")
+
+  const titleElement = document.createElement("h3");
   titleElement.textContent = task.title;
 
-  const descriptionElement = document.createElement ("p");
+  const descriptionElement = document.createElement("p");
   descriptionElement.textContent = task.description;
 
   taskDiv.appendChild(titleElement);
- //taskDiv.appendChild(descriptionElement);
+  //taskDiv.appendChild(descriptionElement);
 
- taskDiv.addEventListener("click", () => openTaskModal(task));
+  taskDiv.addEventListener("click", () => openTaskModal(task));
 
-
-   return taskDiv;
+  return taskDiv;
 }
 
-   renderTasks(initialTasks);
+renderTasks(initialTasks);
 
-  function openTaskModal(task) {
+function openTaskModal(task) {
   const modal = document.getElementById("task-modal");
   const backdrop = document.querySelector(".modal-backdrop");
 
