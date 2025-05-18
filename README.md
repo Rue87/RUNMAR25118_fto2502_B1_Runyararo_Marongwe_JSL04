@@ -27,15 +27,15 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 - Ensuring responsive interaction for all devices and screen sizes — Solved by writing flexible CSS and testing across different screen   sizes.
 
 ### Main Challenge (Unresolved)
-- **Issue:**In Google Chrome (particularly on mobile view), the status dropdown overlaps the input area instead of appearing below it. However, the same dropdown works correctly in Microsoft Edge, where it drops down as expected.
+- **Issue:** In Google Chrome (particularly on mobile view), the status dropdown overlaps the input area instead of appearing below it. However, the same dropdown works correctly in Microsoft Edge, where it drops down as expected.
 
-- **Status:**This issue is currently unresolved and appears to be browser-specific. Screenshots are included below for reference
+- **Status:** This issue is currently unresolved and appears to be browser-specific. Screenshots are included below for reference
 
-**Chrome:below**
+- **Chrome:click below**
 
   ![alt text](./image.png)
 
-**Microsoft Edge:below**
+**Microsoft Edge:click below**
 
   ![alt text](./image-1.png)
 
@@ -59,6 +59,8 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 - All tasks and UI elements are created dynamically using JavaScript.
 - CSS is used to style the board and make it responsive.
 - The modal is shown/hidden using JavaScript event listeners.
+
+- P.S. This project is open for collaboration. My contacts are just below.
 
 ## Contact
 
