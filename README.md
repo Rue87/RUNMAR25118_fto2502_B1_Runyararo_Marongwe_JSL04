@@ -25,6 +25,7 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 
 - Dynamically displaying tasks without hard-coding them into the HTML — Solved by using JavaScript to create and insert elements into the DOM at runtime.
 - Ensuring responsive interaction for all devices and screen sizes — Solved by writing flexible CSS and testing across different screen   sizes.
+- **Modal Close Button Positioning:** Tried to correctly position the closing "X" button on the modal, but couldn’t achieve the expected placement. It may appear misaligned or not in the intended spot(unresolve)
 
 ### Main Challenge (Unresolved)
 - **Issue:** In Google Chrome (particularly on mobile view), the status dropdown overlaps the input area instead of appearing below it. However, the same dropdown works correctly in Microsoft Edge, where it drops down as expected.
@@ -60,7 +61,7 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 - CSS is used to style the board and make it responsive.
 - The modal is shown/hidden using JavaScript event listeners.
 
-- P.S. This project is open for collaboration. My contacts are just below.
+P.S. This project is open for collaboration. My contacts are just below.
 
 ## Contact
 
