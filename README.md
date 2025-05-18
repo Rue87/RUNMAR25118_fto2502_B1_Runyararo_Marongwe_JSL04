@@ -8,12 +8,12 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 
 ## Features
 
-- **Three task columns:** To Do, Doing, and Done
-- **Modal popup** to view task details
-- **Click any task** to open its details
-- Allows modal to be closed by clicking the red **"X"** or clicking outside the modal (on the background)
-- Supports future dynamic task additions and updates without changing HTML
-- Fully **responsive layout** for desktop and mobile
+- **Three task columns:** To Do, Doing, and Done.
+- **Modal popup** to view task details.
+- **Click any task** to open its details.
+- Allows modal to be closed by clicking the red **"X"** or clicking outside the modal (on the background).
+- Supports future dynamic task additions and updates without changing HTML.
+- Fully **responsive layout** for desktop and mobile.
   
 ## Technologies Used
 
@@ -29,7 +29,7 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 ### Main Challenge (Unresolved)
 - **Issue:** In Google Chrome (particularly on mobile view), the status dropdown overlaps the input area instead of appearing below it. However, the same dropdown works correctly in Microsoft Edge, where it drops down as expected.
 
-- **Status:** This issue is currently unresolved and appears to be browser-specific. Screenshots are included below for reference
+- **Status:** This issue is currently unresolved and appears to be browser-specific. Screenshots are included below for reference:
 
 - **Chrome:click below**
 
