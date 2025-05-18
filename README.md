@@ -32,11 +32,11 @@ Everything you see on the page is **generated with JavaScript** — nothing is h
 
 - **Status:** This issue is currently unresolved and appears to be browser-specific. Screenshots are included below for reference:
 
-- **Chrome:click below**
+**Chrome:**
 
   ![alt text](./image.png)
 
-**Microsoft Edge:click below**
+**Microsoft Edge:**
 
   ![alt text](./image-1.png)
 
